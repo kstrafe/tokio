@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1607040501562,
+  "lastUpdate": 1607040680993,
   "repoUrl": "https://github.com/BourgondAries/tokio",
   "entries": {
     "rt_multi_threaded": [
@@ -189,6 +189,62 @@ window.BENCHMARK_DATA = {
             "name": "read_uncontended",
             "value": 545,
             "range": "± 81",
+            "unit": "ns/iter"
+          }
+        ]
+      }
+    ],
+    "sync_semaphore": [
+      {
+        "commit": {
+          "author": {
+            "email": "macocio@gmail.com",
+            "name": "Kevin Robert Stravers",
+            "username": "BourgondAries"
+          },
+          "committer": {
+            "email": "macocio@gmail.com",
+            "name": "Kevin Robert Stravers",
+            "username": "BourgondAries"
+          },
+          "distinct": true,
+          "id": "31560bfe91bf2c7c4895e5cc51c637e79cf6ef0f",
+          "message": "Add unwind feature flag\n\nSpecifying the `unwind` feature flag removes the catch_unwind from\nthe task harness. This is especially useful for testing a program with\ndetached joinhandles.",
+          "timestamp": "2020-12-04T00:41:50+01:00",
+          "tree_id": "ce7e84b742d94a7c34475fb4123da62214f21e97",
+          "url": "https://github.com/BourgondAries/tokio/commit/31560bfe91bf2c7c4895e5cc51c637e79cf6ef0f"
+        },
+        "date": 1607040679740,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "contended_concurrent_multi",
+            "value": 13834,
+            "range": "± 2251",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "contended_concurrent_single",
+            "value": 903,
+            "range": "± 5",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "uncontended",
+            "value": 534,
+            "range": "± 7",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "uncontended_concurrent_multi",
+            "value": 13872,
+            "range": "± 2426",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "uncontended_concurrent_single",
+            "value": 908,
+            "range": "± 5",
             "unit": "ns/iter"
           }
         ]
