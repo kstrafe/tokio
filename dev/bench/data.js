@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1607040680993,
+  "lastUpdate": 1607210062776,
   "repoUrl": "https://github.com/BourgondAries/tokio",
   "entries": {
     "rt_multi_threaded": [
@@ -47,6 +47,54 @@ window.BENCHMARK_DATA = {
             "name": "yield_many",
             "value": 19116222,
             "range": "± 4218514",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "macocio@gmail.com",
+            "name": "Kevin Robert Stravers",
+            "username": "BourgondAries"
+          },
+          "committer": {
+            "email": "macocio@gmail.com",
+            "name": "Kevin Robert Stravers",
+            "username": "BourgondAries"
+          },
+          "distinct": true,
+          "id": "42dc30a5db7849889b1eff3567aafe91d1b719cb",
+          "message": "Implement a test scheduler that propagates panics\n\nThis patch implements a new scheduler that does not capture unwinds. It\ninstead lets unwinds bubble up.\n\nThis is useful in test cases where we might be interested in detached\ntasks' panics. Not all applications are interested in letting tasks\nfail, so this scheduler makes the implementation of testing such\napplications or libraries much easier.",
+          "timestamp": "2020-12-06T00:02:39+01:00",
+          "tree_id": "460d324e82665b1683219d09b92667ab1db0b8cd",
+          "url": "https://github.com/BourgondAries/tokio/commit/42dc30a5db7849889b1eff3567aafe91d1b719cb"
+        },
+        "date": 1607210061371,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "chained_spawn",
+            "value": 158787,
+            "range": "± 20042",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ping_pong",
+            "value": 610923,
+            "range": "± 80618",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "spawn_many",
+            "value": 4768875,
+            "range": "± 1135193",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "yield_many",
+            "value": 18402776,
+            "range": "± 3406389",
             "unit": "ns/iter"
           }
         ]
