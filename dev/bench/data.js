@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1607210062776,
+  "lastUpdate": 1607210069830,
   "repoUrl": "https://github.com/BourgondAries/tokio",
   "entries": {
     "rt_multi_threaded": [
@@ -181,6 +181,90 @@ window.BENCHMARK_DATA = {
             "name": "uncontented_unbounded",
             "value": 680091,
             "range": "± 1274",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "macocio@gmail.com",
+            "name": "Kevin Robert Stravers",
+            "username": "BourgondAries"
+          },
+          "committer": {
+            "email": "macocio@gmail.com",
+            "name": "Kevin Robert Stravers",
+            "username": "BourgondAries"
+          },
+          "distinct": true,
+          "id": "42dc30a5db7849889b1eff3567aafe91d1b719cb",
+          "message": "Implement a test scheduler that propagates panics\n\nThis patch implements a new scheduler that does not capture unwinds. It\ninstead lets unwinds bubble up.\n\nThis is useful in test cases where we might be interested in detached\ntasks' panics. Not all applications are interested in letting tasks\nfail, so this scheduler makes the implementation of testing such\napplications or libraries much easier.",
+          "timestamp": "2020-12-06T00:02:39+01:00",
+          "tree_id": "460d324e82665b1683219d09b92667ab1db0b8cd",
+          "url": "https://github.com/BourgondAries/tokio/commit/42dc30a5db7849889b1eff3567aafe91d1b719cb"
+        },
+        "date": 1607210068452,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "contention_bounded",
+            "value": 6952720,
+            "range": "± 2256334",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "contention_bounded_full",
+            "value": 6728020,
+            "range": "± 1837219",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "contention_unbounded",
+            "value": 6312865,
+            "range": "± 2118660",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "create_100_000_medium",
+            "value": 649,
+            "range": "± 8",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "create_100_medium",
+            "value": 657,
+            "range": "± 14",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "create_1_medium",
+            "value": 657,
+            "range": "± 13",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "send_large",
+            "value": 47504,
+            "range": "± 660",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "send_medium",
+            "value": 928,
+            "range": "± 69",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "uncontented_bounded",
+            "value": 1142785,
+            "range": "± 80526",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "uncontented_unbounded",
+            "value": 823696,
+            "range": "± 55677",
             "unit": "ns/iter"
           }
         ]
